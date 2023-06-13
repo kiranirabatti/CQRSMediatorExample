@@ -23,13 +23,6 @@ namespace CQRSMediatorExample.Controllers
             return Ok(products);
         }
 
-        //[HttpPost]
-        //public async Task<ActionResult> AddProduct([FromBody] Product product)
-        //{
-        //    await _mediator.Send(new AddProductCommand(product));
-        //    return StatusCode(201);
-        //}
-
         [HttpPost]
         public async Task<ActionResult> AddProduct([FromBody] Product product)
         {

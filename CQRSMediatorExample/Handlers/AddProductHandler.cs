@@ -14,7 +14,7 @@ namespace CQRSMediatorExample.Handlers
 
         public async Task<Product> Handle(AddProductCommand request, CancellationToken cancellationToken)
         {
-            await _fakeDataStore.AddProduct(request.Product);
+            await _fakeDataStore.AddProduct(request.Product, _products);
 
             return request.Product;
         }

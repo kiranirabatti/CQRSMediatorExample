@@ -21,6 +21,7 @@ namespace WebAPI_NET6.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
+            _logger.LogInformation("Get Weather Forecase");
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
@@ -28,12 +29,6 @@ namespace WebAPI_NET6.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
-        }
-
-        [HttpDelete("id")]
-        public void Get(int id)
-        {
-            
         }
     }
 }
